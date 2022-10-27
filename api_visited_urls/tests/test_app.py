@@ -42,4 +42,3 @@ def test_app(monkeypatch):
     for domain in DOMAINS:
         assert domain in response_get.text
     r.flushdb()
-    

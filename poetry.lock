@@ -178,6 +178,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "orjson"
+version = "3.8.1"
+description = "Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
@@ -390,7 +398,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4"
-content-hash = "d555dad2b181211011232eefbed4c1b6addb3d2ddc06f2ee0f2662f67c636a13"
+content-hash = "c528a397b2fbbb37b4dc0078833f0b78d0ba057b58a82abcf585c860392ee479"
 
 [metadata.files]
 anyio = []
@@ -409,6 +417,7 @@ h11 = []
 idna = []
 iniconfig = []
 mccabe = []
+orjson = []
 packaging = []
 pluggy = []
 pycodestyle = []

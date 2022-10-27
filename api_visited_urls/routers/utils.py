@@ -4,8 +4,8 @@ from urllib.parse import urlparse
 def get_domains_for_period(redis, beginning_time, end_time):
     domains = []
     keys = redis.scan_iter(match='*')
-    b_beginning_time = bytes(beginning_time, encoding = 'UTF-8')
-    b_end_time = bytes(end_time, encoding = 'UTF-8')
+    b_beginning_time = bytes(beginning_time, encoding='UTF-8')
+    b_end_time = bytes(end_time, encoding='UTF-8')
     keys_within_period = [
         key for key in keys if (
             key >= b_beginning_time) and (key <= b_end_time)]

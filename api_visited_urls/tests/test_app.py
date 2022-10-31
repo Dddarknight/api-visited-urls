@@ -2,12 +2,12 @@ import redis
 import time
 from fastapi.testclient import TestClient
 from api_visited_urls.server import app
-from api_visited_urls.routers import services
+from api_visited_urls.init_routers import init_routers
 
 
 client = TestClient(app)
 
-r = redis.Redis(db=15)
+test_db = redis.Redis(db=15)
 
 FIXTURE1 = [
     "https://ya.ru",
@@ -25,10 +25,8 @@ FIXTURE2 = [
 DOMAINS = ['ya.ru', 'funbox.ru', 'stackoverflow.com', 'www.google.com']
 
 
-def test_app(monkeypatch):
-    monkeypatch.setattr(
-        services, 'r', r)
-
+def test_app():
+    init_routers(app, test_db)
     beginning_time = time.time()
     response_post = client.post("/visited_links", json=FIXTURE1)
     for link in FIXTURE1:
@@ -41,4 +39,4 @@ def test_app(monkeypatch):
         f"/visited_domains?from_={beginning_time}&to_={end_time}")
     for domain in DOMAINS:
         assert domain in response_get.text
-    r.flushdb()
+    test_db.flushdb()

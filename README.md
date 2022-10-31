@@ -20,11 +20,12 @@ This project was built using these tools:
 | [poetry](https://python-poetry.org/) |  "Python dependency management and packaging made easy" |
 | [Py.Test](https://pytest.org) | "A mature full-featured Python testing tool" |
 
-## Installation for contributors
+## Installation and launch
 ```
 $ git clone git@github.com:Dddarknight/api-visited-urls.git
 $ pip install poetry
-$ poetry install
+$ make install
+$ make run
 
 ```
 

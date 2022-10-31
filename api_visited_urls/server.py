@@ -1,12 +1,15 @@
 import uvicorn
 
 from fastapi import FastAPI
-from api_visited_urls.routers import services
+from api_visited_urls.db import init_db
+from api_visited_urls.init_routers import init_routers
 
 
 app = FastAPI()
 
-app.include_router(services.router)
+db_cache = init_db()
+
+init_routers(app, db_cache)
 
 
 if __name__ == "__main__":

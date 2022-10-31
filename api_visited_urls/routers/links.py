@@ -1,6 +1,6 @@
-import time
 from fastapi import APIRouter
 from fastapi.responses import ORJSONResponse
+
 
 def create_links_router(links_service, db_cache):
     router = APIRouter()

@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from fastapi.responses import ORJSONResponse
 
+
 def create_domains_router(domains_service, db_cache):
     router = APIRouter()
 

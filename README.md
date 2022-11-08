@@ -18,10 +18,15 @@ This project was built using these tools:
 ## Installation and launch
 ```
 $ git clone git@github.com:Dddarknight/api-visited-urls.git
+$ cd api-visited-urls
 $ pip install poetry
 $ make install
 $ make run
+$ sudo apt-get install redis
+  (for Linux)
+$ sudo apt-get install redis-tools
 
+Then you need to get to route '/docs'.
 ```
 
 ## Description and usage
